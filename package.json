@@ -1,0 +1,8 @@
+{
+  "name": "NPM Package Hoist",
+  "description": "Used to hoist packages read from subdirectory to root",
+  "private": true,
+  "workspaces": [
+    "./nextjs/*"
+  ]
+}
