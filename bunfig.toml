@@ -1,0 +1,3 @@
+[install]
+# linker = "hoisted" # The default value is isolated
+# publicHoistPattern = ["@types*", "*eslint*"]
