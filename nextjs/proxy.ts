@@ -1,6 +1,3 @@
-import { NextResponse, NextRequest } from 'next/server';
+import { NextResponse, NextRequest } from "next/server";
 
-export function proxy(request: NextRequest)
-{
-
-}
+export function proxy(request: NextRequest) {}
