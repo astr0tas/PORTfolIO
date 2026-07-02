@@ -6,7 +6,7 @@
       "name": "NPM Package Hoist",
     },
     "nextjs": {
-      "name": "NextJS Client",
+      "name": "NextJS-Client",
       "version": "0.1.0",
       "dependencies": {
         "next": "16.2.4",
@@ -300,7 +300,7 @@
 
     "@unrs/resolver-binding-win32-x64-msvc": ["@unrs/resolver-binding-win32-x64-msvc@1.12.2", "", { "os": "win32", "cpu": "x64" }, "sha512-nAB74NfSNKknqQ1RrYj6uz8FcXEomu/MATJZxh/x+BArzN2U3JbOYC0APYzUIGhVY3m5hRxA8VPNdPBoG8txlA=="],
 
-    "NextJS Client": ["NextJS Client@workspace:nextjs"],
+    "NextJS-Client": ["NextJS-Client@workspace:nextjs"],
 
     "acorn": ["acorn@8.17.0", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-xRQbDb9BnwDafYNn6Vwl839DYVjqXYb1XVGtWAZ1kcDc6iwAL4hg3B1dZlRiuENFeO2H53gFG3in621AdERVAg=="],
 

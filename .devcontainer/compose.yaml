@@ -1,0 +1,80 @@
+services:
+  nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile.nextjs
+    container_name: portfolio_nextjs
+    ports:
+      - "3000:3000"
+    volumes:
+      - ..:/workspace:cached
+      - ../node_modules:/workspace/node_modules
+    environment:
+      - BUN_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+      - CHOKIDAR_USECHALLENGE=true # Aids Hot Module Replacement (HMR) reliability in Docker
+    working_dir: /workspace/nextjs
+    command: /bin/sh -c "if [ ! -f .package-installed ]; then bun install && touch .package-installed; fi && sleep infinity"
+    networks:
+      - portfolio-network
+
+  django:
+    build:
+      context: .
+      dockerfile: Dockerfile.django
+    container_name: portfolio_django
+    ports:
+      - "8080:8080"
+    volumes:
+      - ..:/workspace:cached
+      - portfolio-django-uv-cache:/root/.cache/uv
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - ENV=development
+      - UV_COMPILE_BYTECODE=1
+      - UV_LINK_MODE=copy
+    working_dir: /workspace/django
+    command: /bin/sh -c "if [ ! -f .package-installed ]; then uv sync && touch .package-installed; fi && sleep infinity"
+    networks:
+      - portfolio-network
+
+  spring_boot:
+    build:
+      context: .
+      dockerfile: Dockerfile.spring_boot
+    container_name: portfolio_spring_boot
+    ports:
+      - "8000:8000"
+    volumes:
+      - ..:/workspace:cached
+      - portfolio-spring-boot-maven-cache:/root/.m2
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+    working_dir: /workspace/spring_boot
+    command: sleep infinity
+    networks:
+      - portfolio-network
+
+  pgsql:
+    image: postgres:18.4
+    container_name: portfolio_pgsql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: portfolio
+    volumes:
+      - portfolio-pgsql:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+    networks:
+      - portfolio-network
+
+volumes:
+  portfolio-django-uv-cache:
+  portfolio-spring-boot-maven-cache:
+  portfolio-pgsql:
+    external: true
+
+networks:
+  portfolio-network:

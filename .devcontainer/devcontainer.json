@@ -1,34 +1,80 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/php
 {
-	"name": "PortfolIO Dev Container",
-	// // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	// "image": "mcr.microsoft.com/devcontainers/php:3-8.4-bookworm",
-	"dockerComposeFile": ["compose.yaml", "compose.override.yaml", "compose.yml", "compose.override.yml", "docker-compose.yaml", "docker-compose.override.yaml", "docker-compose.yml", "docker-compose.override.yml"],
-  "service": "app",
+  "name": "PortfolIO Dev Container",
+  // // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  // "image": "",
+  "dockerComposeFile": [
+    "compose.yaml",
+    "compose.override.yaml"
+  ],
+  "service": "nextjs",
   "workspaceFolder": "/workspace",
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	"features": {
-		"ghcr.io/r3dpoint/devcontainer-features/tailwindcss-standalone-cli:1": {}
-	},
-
-	// Configure tool-specific properties.
-	"customizations": {
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/r3dpoint/devcontainer-features/tailwindcss-standalone-cli:1": {}
+  },
+  // Configure tool-specific properties.
+  "customizations": {
     "vscode": {
       "extensions": [
+        "codegyan.auto-closing-tags",
+        "LeonQin.auto-insert-comma",
+        "formulahendry.auto-rename-tag",
+        "aaron-bond.better-comments",
+        "alefragnani.Bookmarks",
+        "wesbos.theme-cobalt2",
+        "formulahendry.code-runner",
+        "Nuxt.mdc",
+        "Continue.continue",
+        "vscjava.vscode-java-debug",
+        "Fuzionix.devtool-plus",
+        "batisteo.vscode-django",
+        "dracula-theme.theme-dracula",
+        "usernamehw.errorlens",
+        "dsznajder.es7-react-js-snippets",
+        "dbaeumer.vscode-eslint",
+        "tamasfe.even-better-toml",
+        "vscjava.vscode-java-pack",
+        "mhutchie.git-graph",
+        "github.vscode-github-actions",
+        "me-dutour-mathieu.vscode-github-actions",
+        "GitHub.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "vincaslt.highlight-matching-tag",
+        "ecmel.vscode-html-css",
+        "Oracle.oracle-java",
+        "xabikos.JavaScriptSnippets",
+        "ms-vscode.vscode-typescript-next",
+        "redhat.java",
+        "yzhang.markdown-all-in-one",
+        "shd101wyy.markdown-preview-enhanced",
+        "vscjava.vscode-maven",
+        "esbenp.prettier-vscode",
+        "rvest.vs-code-prettier-eslint",
+        "vscjava.vscode-java-dependency",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "donjayamanne.python-environment-manager",
+        "ms-python.vscode-python-envs",
+        "KevinRose.vsc-python-indent",
+        "vscjava.vscode-spring-initializr",
+        "bradlc.vscode-tailwindcss",
+        "vscjava.vscode-java-test",
+        "vscode-icons-team.vscode-icons",
+        "DotJoshJohnson.xml",
+        "redhat.vscode-yaml",
+        "jock.svg"
       ]
     }
-  }
-
-	// // Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "composer install",
-  // Use 'postStartCommand' to run commands after the container is started.
-	// "postStartCommand": ""
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "",
+  // // Use 'postStartCommand' to run commands after the container is started.
+  // "postStartCommand": "",
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "root"
 }
