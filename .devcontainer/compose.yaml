@@ -14,7 +14,7 @@ services:
       - NEXT_TELEMETRY_DISABLED=1
       - CHOKIDAR_USECHALLENGE=true # Aids Hot Module Replacement (HMR) reliability in Docker
     working_dir: /workspace/nextjs
-    command: /bin/sh -c "if [ ! -f .package-installed ]; then bun install && touch .package-installed; fi && sleep infinity"
+    command: /bin/sh -c "if [ ! -f /.package-installed ]; then bun install && touch /.package-installed; fi && sleep infinity"
     networks:
       - portfolio-network
 
@@ -35,7 +35,7 @@ services:
       - UV_COMPILE_BYTECODE=1
       - UV_LINK_MODE=copy
     working_dir: /workspace/django
-    command: /bin/sh -c "if [ ! -f .package-installed ]; then uv sync && touch .package-installed; fi && sleep infinity"
+    command: /bin/sh -c "if [ ! -f /.package-installed ]; then uv sync && touch /.package-installed; fi && sleep infinity"
     networks:
       - portfolio-network
 

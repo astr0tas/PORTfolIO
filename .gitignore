@@ -1,5 +1,6 @@
 # Docker
 *compose.override.*
+!*compose.override.example.*
 
 # nextjs dependencies
 /node_modules
@@ -10,6 +11,9 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+
+# django packages
+.venv
 
 ### IntelliJ IDEA ###
 .idea
