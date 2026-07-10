@@ -1,0 +1,19 @@
+# Enforce LF for all text files
+* text=auto eol=lf
+
+# # Explicitly declare text files to always be normalized to LF
+# *.js text eol=lf
+# *.ts text eol=lf
+# *.jsx text eol=lf
+# *.tsx text eol=lf
+# *.java text eol=lf
+# *.py text eol=lf
+# *.json text eol=lf
+# *.yml text eol=lf
+# *.yaml text eol=lf
+# *.sh text eol=lf
+# Dockerfile text eol=lf
+
+# For Windows batch files, keep them as CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
