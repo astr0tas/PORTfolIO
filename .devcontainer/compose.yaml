@@ -8,11 +8,12 @@ services:
       - "3000:3000"
     volumes:
       - ..:/workspace:cached
-      - ../node_modules:/workspace/node_modules
+      - portfolio-nextjs-cache:/workspace/nextjs/.next
+      - portfolio-nextjs-node-modules:/workspace/nextjs/node_modules
+      - portfolio-root-node-modules:/workspace/node_modules
     environment:
       - BUN_ENV=development
       - NEXT_TELEMETRY_DISABLED=1
-      - CHOKIDAR_USECHALLENGE=true # Aids Hot Module Replacement (HMR) reliability in Docker
     working_dir: /workspace/nextjs
     command: /bin/sh -c "if [ ! -f /.package-installed ]; then bun install && touch /.package-installed; fi && sleep infinity"
     networks:
@@ -71,6 +72,9 @@ services:
       - portfolio-network
 
 volumes:
+  portfolio-nextjs-cache:
+  portfolio-nextjs-node-modules:
+  portfolio-root-node-modules:
   portfolio-django-uv-cache:
   portfolio-spring-boot-maven-cache:
   portfolio-pgsql:

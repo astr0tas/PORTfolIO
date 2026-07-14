@@ -4,14 +4,7 @@
   "name": "PortfolIO Dev Container",
   // // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   // "image": "",
-  "mounts": [
-    // Isolates the root node_modules
-    "source=${localWorkspaceFolderBasename}-root-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
-    // Isolates the nextjs node_modules
-    "source=${localWorkspaceFolderBasename}-nextjs-node_modules,target=${containerWorkspaceFolder}/nextjs/node_modules,type=volume",
-    // Isolates the Next.js build cache
-    "source=${localWorkspaceFolderBasename}-nextjs-cache,target=${containerWorkspaceFolder}/nextjs/.next,type=volume"
-  ],
+  // "mounts": [],
   "dockerComposeFile": [
     "compose.yaml",
     "compose.override.yaml"
