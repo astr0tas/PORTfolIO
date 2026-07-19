@@ -24,3 +24,19 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@font-face {
+  /* This is the name you will reference in Tailwind */
+  font-family: "purgatory";
+  /* Adjust this path based on your folder structure */
+  src:
+    url("/fonts/purgatory.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap; /* Helps prevent invisible text while loading */
+}
+
+@theme {
+  /* This creates the class: font-purgatory */
+  --font-purgatory: 'purgatory', cursive;
+}
