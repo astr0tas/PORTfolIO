@@ -29,6 +29,7 @@ services:
     volumes:
       - ..:/workspace:cached
       - portfolio-django-uv-cache:/root/.cache/uv
+      - portfolio-django-venv:/workspace/.venv
     environment:
       - PYTHONUNBUFFERED=1
       - PYTHONDONTWRITEBYTECODE=1
@@ -76,6 +77,7 @@ volumes:
   portfolio-nextjs-node-modules:
   portfolio-root-node-modules:
   portfolio-django-uv-cache:
+  portfolio-django-venv:
   portfolio-spring-boot-maven-cache:
   portfolio-pgsql:
     external: true
