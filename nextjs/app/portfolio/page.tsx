@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MainComponent from './components/main';
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -7,6 +8,8 @@ export const metadata: Metadata = {
 
 export default function Index() {
   return (
-    <div className="w-full h-full flex flex-col overflow-x-hidden overflow-y-auto"></div>
+    <div className="w-full h-full">
+      <MainComponent />
+    </div>
   );
 }
